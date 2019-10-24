@@ -6,7 +6,7 @@ namespace ASPInClass
 {
     public class ProductRepository
     {
-        private static string connectionString = "Server=localhost;Database=bestbuy;uid=root;Pwd=password";
+        private static string connectionString = System.IO.File.ReadAllText("connectionString.txt");
         public List<Product> GetAllProducts()
         {
             MySqlConnection conn = new MySqlConnection(connectionString);
